@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Status bar color -->
+    <meta name="theme-color" content="#fff">
+    <title>Sudoku</title>
+    <link rel="shortcut icon" href="./static/images/icon.png" type="image/x-icon">
+    <!-- google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Potta+One&display=swap" rel="stylesheet">
+    <!-- Box Icons (from Box Icons) -->
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+    <!-- App css -->
+    <link rel="stylesheet" href="./app.css">
+
+</head>
+
+<body>
+
+    <!--nav -->
+    <nav>
+        <!--Instruction icon nav bar -->
+        <div class="instruction-icon" id="instruction-icon">
+            <i class="bx bx-help-circle"></i>
+        </div>
+
+        <!-- Instruction Modal -->
+        <div class="instruction-modal" id="instruction-modal">
+            <div class="modal-content">
+                <h2>How to Play Sudoku</h2>
+                <ul>
+                    <li>The goal of Sudoku is to fill a 9x9 grid with numbers so that each row, column, and 3x3 section
+                        contains the digits 1 through 9 without repeating.</li>
+                    <li>Each puzzle starts with some cells pre-filled. Your task is to complete the grid following the
+                        rules</li>
+                    <li>Click a cell to select it, then choose a number from the number pad.</li>
+                    <li>You can erase a number by selecting the cell and clicking the delete(❌) button.</li>
+                    <li>Use the timer to track your performance.</li>
+                    <li>If you're stuck, you can start a new game or pause and Resume to take a break.</li>
+
+                    <li>Game Web Created by- Aditya Swaroop (2024A1PS0253P)</li>
+                </ul>
+                <button class="btn btn-blue" id="close-modal">Close</button>
+            </div>
+        </div>
+        <div class="nav-container">
+            <a href="#" class="nav-logo">
+                Sudoku Puzzle
+            </a>
+            <div class="dark-mode-toggle" id="dark-mode-toggle">
+                <i class="bx bxs-sun"></i>
+                <i class="bx bxs-moon"></i>
+            </div>
+        </div>
+    </nav>
+    <!-- End nav -->
+
+    <!-- main -->
+    <div class="main">
+        <div class="screen">
+            <!-- start screen -->
+            <div class="start-screen active" id="start-screen">
+                <input type="text" placeholder="Your name" maxlength="11" class="input-name" id="input-name">
+                <div class="btn" id="btn-level">
+                    Easy
+                </div>
+                <div class="btn" id="btn-continue">Continue</div>
+                <div class="btn btn-blue" id="btn-play">New game</div>
+            </div>
+            <!-- end start screen -->
+
+            <!-- game screen -->
+            <div class="main-game" id="game-screen">
+                <div class="main-sudoku-grid">
+                    <!-- 81 cells -->
+                    <div class="main-grid-cell"></div>
+                    <div class="main-grid-cell"></div>
+                    <div class="main-grid-cell"></div>
+                    <div class="main-grid-cell"></div>
+                    <div class="main-grid-cell"></div>
+                    <div class="main-grid-cell"></div>
+                    <div class="main-grid-cell"></div>
+                    <div class="main-grid-cell"></div>
+                    <div class="main-grid-cell"></div>
+                    <div class="main-grid-cell"></div>
+                    <div class="main-grid-cell"></div>
+                    <div class="main-grid-cell"></div>
+                    <div class="main-grid-cell"></div>
+                    <div class="main-grid-cell"></div>
+                    <div class="main-grid-cell"></div>
+                    <div class="main-grid-cell"></div>
+                    <div class="main-grid-cell"></div>
+                    <div class="main-grid-cell"></div>
+                    <div class="main-grid-cell"></div>
+                    <div class="main-grid-cell"></div>
+                    <div class="main-grid-cell"></div>
+                    <div class="main-grid-cell"></div>
+                    <div class="main-grid-cell"></div>
+                    <div class="main-grid-cell"></div>
+                    <div class="main-grid-cell"></div>
+                    <div class="main-grid-cell"></div>
+                    <div class="main-grid-cell"></div>
+                    <div class="main-grid-cell"></div>
+                    <div class="main-grid-cell"></div>
+                    <div class="main-grid-cell"></div>
+                    <div class="main-grid-cell"></div>
+                    <div class="main-grid-cell"></div>
+                    <div class="main-grid-cell"></div>
+                    <div class="main-grid-cell"></div>
+                    <div class="main-grid-cell"></div>
+                    <div class="main-grid-cell"></div>
+                    <div class="main-grid-cell"></div>
+                    <div class="main-grid-cell"></div>
+                    <div class="main-grid-cell"></div>
+                    <div class="main-grid-cell"></div>
+                    <div class="main-grid-cell"></div>
+                    <div class="main-grid-cell"></div>
+                    <div class="main-grid-cell"></div>
+                    <div class="main-grid-cell"></div>
+                    <div class="main-grid-cell"></div>
+                    <div class="main-grid-cell"></div>
+                    <div class="main-grid-cell"></div>
+                    <div class="main-grid-cell"></div>
+                    <div class="main-grid-cell"></div>
+                    <div class="main-grid-cell"></div>
+                    <div class="main-grid-cell"></div>
+                    <div class="main-grid-cell"></div>
+                    <div class="main-grid-cell"></div>
+                    <div class="main-grid-cell"></div>
+                    <div class="main-grid-cell"></div>
+                    <div class="main-grid-cell"></div>
+                    <div class="main-grid-cell"></div>
+                    <div class="main-grid-cell"></div>
+                    <div class="main-grid-cell"></div>
+                    <div class="main-grid-cell"></div>
+                    <div class="main-grid-cell"></div>
+                    <div class="main-grid-cell"></div>
+                    <div class="main-grid-cell"></div>
+                    <div class="main-grid-cell"></div>
+                    <div class="main-grid-cell"></div>
+                    <div class="main-grid-cell"></div>
+                    <div class="main-grid-cell"></div>
+                    <div class="main-grid-cell"></div>
+                    <div class="main-grid-cell"></div>
+                    <div class="main-grid-cell"></div>
+                    <div class="main-grid-cell"></div>
+                    <div class="main-grid-cell"></div>
+                    <div class="main-grid-cell"></div>
+                    <div class="main-grid-cell"></div>
+                    <div class="main-grid-cell"></div>
+                    <div class="main-grid-cell"></div>
+                    <div class="main-grid-cell"></div>
+                    <div class="main-grid-cell"></div>
+                    <div class="main-grid-cell"></div>
+                    <div class="main-grid-cell"></div>
+                    <div class="main-grid-cell"></div>
+                </div>
+
+                <div class="main-game-info">
+                    <div class="main-game-info-box main-game-info-name">
+                        <span id="player-name">tuat</span>
+                    </div>
+                    <div class="main-game-info-box main-game-info-level">
+                        <span id="game-level">Easy</span>
+                    </div>
+                </div>
+
+                <div class="main-game-info-box main-game-info-time">
+                    <span id="game-time">10:20</span>
+                    <div class="pause-btn" id="btn-pause">
+                        <i class="bx bx-pause"></i>
+                    </div>
+                </div>
+
+                <div class="numbers">
+                    <div class="number">1</div>
+                    <div class="number">2</div>
+                    <div class="number">3</div>
+                    <div class="number">4</div>
+                    <div class="number">5</div>
+                    <div class="number">6</div>
+                    <div class="number">7</div>
+                    <div class="number">8</div>
+                    <div class="number">9</div>
+                    <div class="delete" id="btn-delete">X</div>
+                </div>
+            </div>
+            <!-- end game screen -->
+
+            <!-- pause screen -->
+            <div class="pause-screen" id="pause-screen">
+                <div class="btn btn-blue" id="btn-resume">Resume</div>
+                <div class="btn" id="btn-new-game">New game</div>
+            </div>
+            <!-- end pause screen -->
+
+            <!-- result screen -->
+            <div class="result-screen" id="result-screen">
+                <div class="congrate">Competed</div>
+                <div class="info">Time</div>
+                <div id="result-time"></div>
+                <div class="btn" id="btn-new-game-2">New game</div>
+            </div>
+            <!-- end result screen -->
+        </div>
+    </div>
+    <!-- end main -->
+
+    <script src="./static/js/constant.js"></script>
+    <script src="./static/js/sudoku.js"></script>
+    <script src="./static/js/app.js"></script>
+</body>
+
+</html>
